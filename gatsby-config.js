@@ -10,6 +10,7 @@ module.exports = {
       options: {
         alias: {
           components: path.resolve(__dirname, 'src/components'),
+          providers: path.resolve(__dirname, 'src/providers'),
           theme: path.resolve(__dirname, 'src/theme'),
         },
       },

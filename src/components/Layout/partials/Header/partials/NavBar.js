@@ -1,35 +1,73 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+
+import { BiMenu } from 'react-icons/bi';
+import NavItems from './NavItems';
+import MobileNav from './MobileNav';
 
 import { COLORS } from 'theme';
 
-const Wrapper = styled.nav`
+const Container = styled.nav`
   position: relative;
+  display: flex;
+  align-items: center;
+
   background: ${COLORS.WHITE};
   box-shadow: 1px 0px 5px 0px #11111182;
-  padding: 0px 48px;
+  height: 64px;
+  padding: ${({ isMobile }) => (isMobile ? '0px 24px' : '0px 48px')};
 `;
 
 const Logo = styled.img`
-  width: 195px;
-  position: absolute;
-  left: 24px;
-  top: 24px;
+  width: ${({ isMobile }) => (isMobile ? '128px' : '195px')};
+  position: ${({ isMobile }) => (isMobile ? 'relative' : 'absolute')};
+
+  ${({ isMobile }) =>
+    !isMobile &&
+    `
+    left: 24px;
+    top: 24px;
+  `}
 `;
 
-const NavList = styled.ul`
+const ContentWrapper = styled.ul`
   width: 100%;
+  height: 100%;
   display: flex;
   column-gap: 36px;
   justify-content: flex-end;
 `;
 
-const NavBar = ({ children }) => (
-  <Wrapper>
-    <Logo src={'/logo.png'} alt="Logo" />
+const MobileMenuButton = styled.button`
+  border: none;
+  background: none;
+  padding: 0px;
+`;
 
-    <NavList>{children}</NavList>
-  </Wrapper>
-);
+const NavBar = ({ isMobile }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  return (
+    <Container isMobile={isMobile}>
+      <Logo isMobile={isMobile} src={'/logo.png'} alt="Logo" />
+
+      {isMobile && (
+        <ContentWrapper>
+          <MobileMenuButton onClick={() => setMenuOpen(true)}>
+            <BiMenu />
+          </MobileMenuButton>
+        </ContentWrapper>
+      )}
+
+      {!isMobile && (
+        <ContentWrapper isMobile={isMobile}>
+          <NavItems />
+        </ContentWrapper>
+      )}
+
+      {isMobile && <MobileNav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />}
+    </Container>
+  );
+};
 
 export default NavBar;
