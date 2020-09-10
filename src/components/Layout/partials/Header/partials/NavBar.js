@@ -49,7 +49,7 @@ const NavBar = ({ isMobile }) => {
 
   return (
     <Container isMobile={isMobile}>
-      <Logo isMobile={isMobile} src={'/logo.png'} alt="Logo" />
+      <Logo isMobile={isMobile} src="/logo.png" alt="Logo" />
 
       {isMobile && (
         <ContentWrapper>

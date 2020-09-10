@@ -7,7 +7,7 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     background: ${COLORS.WHITE};
     color: ${COLORS.BLACK};
-    font-family: ${TEXT.montserrat};
+    font-family: ${TEXT.SECONDARY};
   }
   ul {
     margin: 0;

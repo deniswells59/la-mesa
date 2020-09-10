@@ -9,10 +9,11 @@ const Item = styled.li`
   justify-items: center;
 
   color: ${COLORS.PRIMARY};
-  font-family: ${TEXT.yanone};
+  font-family: ${TEXT.PRIMARY};
   text-transform: uppercase;
   font-weight: 600;
   font-size: 20px;
+  letter-spacing: 1px;
 `;
 
 const NavItems = () => (

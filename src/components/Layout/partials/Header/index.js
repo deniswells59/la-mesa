@@ -10,6 +10,7 @@ import { useMobileDetection } from 'providers/MobileDetectionProvider';
 const Wrapper = styled(Flex)`
   width: 100%;
   position: fixed;
+  z-index: 10000;
 `;
 
 const Header = () => {

@@ -11,7 +11,7 @@ import Footer from './partials/Footer';
 /* Obscure margin to clear header */
 const ContentWrapper = styled(Flex)`
   min-height: 100vh;
-  margin-top: 110px;
+  margin-top: 104px;
 `;
 
 const Layout = ({ children }) => (
@@ -20,7 +20,7 @@ const Layout = ({ children }) => (
 
     <Header />
 
-    <ContentWrapper>{children}</ContentWrapper>
+    <ContentWrapper column>{children}</ContentWrapper>
 
     <Footer />
   </Flex>

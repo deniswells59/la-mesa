@@ -6,6 +6,6 @@ export const COLORS = {
 };
 
 export const TEXT = {
-  montserrat: `'Montserrat', sans-serif`,
-  yanone: `'Yanone Kaffeesatz', sans-serif`,
+  PRIMARY: `'Yanone Kaffeesatz', sans-serif`,
+  SECONDARY: `'Montserrat', sans-serif`,
 };
