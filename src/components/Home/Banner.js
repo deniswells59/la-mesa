@@ -7,10 +7,12 @@ import ImgWithOverlay from 'components/Home/ImgWithOverlay';
 
 import imgLg from './images/banner-lg.png';
 
+import { useMobileDetection } from 'providers/MobileDetectionProvider';
+
 const Logo = styled.img`
   position: absolute;
 
-  width: 50%;
+  width: ${(props) => (props.isMobile ? '75%' : '50%')};
   height: auto;
 `;
 
@@ -20,21 +22,35 @@ const BannerButton = styled(Button)`
   height: 64px;
 `;
 
-const Banner = () => (
-  <Flex column>
-    <ImgWithOverlay source={imgLg} height="400px" width="100%">
-      <Logo src="/logo.png" alt="Logo" />
-    </ImgWithOverlay>
+const Banner = () => {
+  const { isMobile } = useMobileDetection();
 
-    <Flex>
-      <ImgWithOverlay source={imgLg} height="240px" width="50%" margin="10px 5px 0px 0px">
-        <BannerButton>Reservations</BannerButton>
+  return (
+    <Flex column>
+      <ImgWithOverlay source={imgLg} height="400px" width="100%">
+        <Logo src="/logo.png" alt="Logo" isMobile={isMobile} />
       </ImgWithOverlay>
-      <ImgWithOverlay source={imgLg} height="240px" width="50%" margin="10px 0px 0px 5px">
-        <BannerButton>Menu</BannerButton>
-      </ImgWithOverlay>
+
+      <Flex column={isMobile ? true : false}>
+        <ImgWithOverlay
+          source={imgLg}
+          height="240px"
+          width={isMobile ? '100%' : '50%'}
+          margin={isMobile ? '10px 0px 0px' : '10px 5px 0px 0px'}
+        >
+          <BannerButton>Reservations</BannerButton>
+        </ImgWithOverlay>
+        <ImgWithOverlay
+          source={imgLg}
+          height="240px"
+          width={isMobile ? '100%' : '50%'}
+          margin={isMobile ? '10px 0px 0px' : '10px 0px 0px 5px'}
+        >
+          <BannerButton>Menu</BannerButton>
+        </ImgWithOverlay>
+      </Flex>
     </Flex>
-  </Flex>
-);
+  );
+};
 
 export default Banner;
