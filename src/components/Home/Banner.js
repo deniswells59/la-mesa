@@ -40,6 +40,7 @@ const Banner = () => {
         >
           <BannerButton>Reservations</BannerButton>
         </ImgWithOverlay>
+
         <ImgWithOverlay
           source={imgLg}
           height="240px"

@@ -14,9 +14,10 @@ const Button = styled.button`
   text-transform: uppercase;
   letter-spacing: 2px;
 
+  cursor: pointer;
+
   &:hover {
-    cursor: pointer;
-    background: #364d6b;
+    background: #4b3019;
   }
 `;
 

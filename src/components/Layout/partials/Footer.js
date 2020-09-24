@@ -13,7 +13,8 @@ const Wrapper = styled(Flex)`
   height: 64px;
   padding: ${({ isMobile }) => (isMobile ? '12px 16px' : '0px 16px')};
 
-  background: ${COLORS.GRAY};
+  background: ${COLORS.PRIMARY};
+  color: ${COLORS.SECONDARY};
   justify-content: space-between;
 `;
 
@@ -31,10 +32,10 @@ const Footer = () => {
   return (
     <Wrapper centerVert column={isMobile ? true : false} isMobile={isMobile}>
       <IconWrapper>
-        <FaFacebookF />
-        <FaInstagram />
-        <FaYelp />
-        <FaMapMarkerAlt />
+        <FaFacebookF color={COLORS.SECONDARY} />
+        <FaInstagram color={COLORS.SECONDARY} />
+        <FaYelp color={COLORS.SECONDARY} />
+        <FaMapMarkerAlt color={COLORS.SECONDARY} />
       </IconWrapper>
 
       <Copyright>&copy; La Mesa. All rights reserved {new Date().getFullYear()}</Copyright>
