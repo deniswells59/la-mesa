@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-const MobileDetectionCtx = createContext({ isMobile: false });
+const MobileDetectionCtx = createContext({ isMobile: true });
 
 const isMobile = (width) => width <= 767;
 
