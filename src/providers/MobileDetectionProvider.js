@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const MobileDetectionCtx = createContext({ isMobile: true });
 
-const isMobile = (width) => width <= 767;
+const isMobile = (width) => console.log({ innerWidth: window.innerWidth, width }) || width <= 767;
 
 const MobileDetectionProvider = ({ children }) => {
   const [mobileFlag, setMobileFlag] = useState({
