@@ -56,7 +56,7 @@ const NavBar = ({ isMobile }) => {
       {isMobile && (
         <ContentWrapper>
           <MobileMenuButton onClick={() => setMenuOpen(true)}>
-            <BiMenu />
+            <BiMenu size={36} />
           </MobileMenuButton>
         </ContentWrapper>
       )}

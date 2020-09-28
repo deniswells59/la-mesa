@@ -10,6 +10,7 @@ import Link from 'components/Link';
 import Widget from 'components/Reservations/Widget';
 
 import { COLORS } from 'theme';
+import { useMobileDetection } from 'providers/MobileDetectionProvider';
 
 import CONFIG from 'config/Reservations';
 
@@ -25,13 +26,21 @@ const LinkButton = styled(Button)`
 
 const Title = styled.h2`
   color: ${COLORS.WHITE};
-  font-size: 48px;
+  font-size: ${({ isMobile }) => (isMobile ? '36px' : '48px')};
   margin: 0px 0px 48px 0px;
 
   text-transform: uppercase;
+
+  ${({ isMobile }) =>
+    isMobile &&
+    `
+    text-align: center;
+  `};
 `;
 
 export default function Reservations() {
+  const { isMobile } = useMobileDetection();
+
   return (
     <Layout>
       <Banner img={CONFIG.bannerImg}>Reservations</Banner>
@@ -39,7 +48,7 @@ export default function Reservations() {
       <Widget />
 
       <FullWidthContent column center centerVert>
-        <Title>Checkout our menu</Title>
+        <Title isMobile={isMobile}>Checkout our menu</Title>
         <Link to="/menu">
           <LinkButton highlight>View Our Menu</LinkButton>
         </Link>

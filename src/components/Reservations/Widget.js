@@ -18,7 +18,7 @@ const Wrapper = styled(Flex)`
 
 const TextWrapper = styled(Flex)`
   max-width: 400px;
-  padding: 64px;
+  padding: ${({ isMobile }) => (isMobile ? '64px 24px 24px' : '64px')};
 
   text-align: ${({ isMobile }) => (isMobile ? 'center' : 'left')};
 `;
