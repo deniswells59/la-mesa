@@ -6,6 +6,7 @@ import Link from 'components/Link';
 import Button from 'components/Button';
 import ImgWithOverlay from 'components/Home/ImgWithOverlay';
 
+import logo from '../../../static/logo.png';
 import imgLg from '../../../static/reservations.jpg';
 import imgSm from './images/banner-lg.png';
 
@@ -33,7 +34,7 @@ const Banner = () => {
   return (
     <Flex column>
       <ImgWithOverlay source={imgLg} height="400px" width="100%">
-        <Logo src="/logo.png" alt="Logo" isMobile={isMobile} />
+        <Logo src={logo} alt="Logo" isMobile={isMobile} />
       </ImgWithOverlay>
 
       <Flex column={isMobile ? true : false}>

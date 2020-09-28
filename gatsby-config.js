@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  pathPrefix: '/la-mesa',
   plugins: [
     {
       resolve: `gatsby-plugin-styled-components`,
