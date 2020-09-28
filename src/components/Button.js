@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { COLORS, TEXT } from 'theme';
 
 const Button = styled.button`
-  background: ${COLORS.PRIMARY};
+  background: ${(props) => (props.highlight ? COLORS.HIGHLIGHT : COLORS.PRIMARY)};
   max-width: 200px;
   min-height: 48px;
   border: 0;
@@ -17,7 +17,7 @@ const Button = styled.button`
   cursor: pointer;
 
   &:hover {
-    background: #4b3019;
+    background: ${(props) => (props.highlight ? COLORS.HIGHLIGHT_HOVER : COLORS.PRIMARY_HOVER)};
   }
 `;
 

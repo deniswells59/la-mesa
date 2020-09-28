@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
+import Link from 'components/Link';
 import { COLORS, TEXT } from 'theme';
 
 const Item = styled.li`
@@ -14,12 +15,18 @@ const Item = styled.li`
   font-weight: 600;
   font-size: 20px;
   letter-spacing: 1px;
+
+  &:hover {
+    color: ${COLORS.PRIMARY_HOVER};
+  }
 `;
 
 const NavItems = () => (
   <Fragment>
-    {['Home', 'Menu', 'Reservations', 'About', 'Careers', 'Gallery'].map((text) => (
-      <Item key={text}>{text}</Item>
+    {['home', 'menu', 'reservations', 'about', 'careers', 'gallery'].map((text) => (
+      <Item key={text}>
+        <Link to={text === 'home' ? '/' : `/${text}`}>{text}</Link>
+      </Item>
     ))}
   </Fragment>
 );

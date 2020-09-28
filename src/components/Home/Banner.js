@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
 import Flex from 'components/Flex';
+import Link from 'components/Link';
 import Button from 'components/Button';
 import ImgWithOverlay from 'components/Home/ImgWithOverlay';
 
@@ -16,8 +17,11 @@ const Logo = styled.img`
   height: auto;
 `;
 
-const BannerButton = styled(Button)`
+const StyledLink = styled(Link)`
   position: absolute;
+`;
+
+const BannerButton = styled(Button)`
   width: 200px;
   height: 64px;
 `;
@@ -38,7 +42,9 @@ const Banner = () => {
           width={isMobile ? '100%' : '50%'}
           margin={isMobile ? '10px 0px 0px' : '10px 5px 0px 0px'}
         >
-          <BannerButton>Reservations</BannerButton>
+          <StyledLink to="/reservations">
+            <BannerButton highlight>Reservations</BannerButton>
+          </StyledLink>
         </ImgWithOverlay>
 
         <ImgWithOverlay
@@ -47,7 +53,9 @@ const Banner = () => {
           width={isMobile ? '100%' : '50%'}
           margin={isMobile ? '10px 0px 0px' : '10px 0px 0px 5px'}
         >
-          <BannerButton>Menu</BannerButton>
+          <StyledLink to="/menu">
+            <BannerButton highlight>Menu</BannerButton>
+          </StyledLink>
         </ImgWithOverlay>
       </Flex>
     </Flex>

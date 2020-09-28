@@ -38,10 +38,21 @@ const StyledButton = styled(Button)`
   min-width: 180px;
 
   margin: 60px;
+
+  ${({ isMobile }) =>
+    isMobile &&
+    `
+    align-self: center;
+  `}
 `;
 
 const Text = styled.p`
   margin: 60px;
+  ${({ isMobile }) =>
+    isMobile &&
+    `
+    margin-bottom: 20px;
+  `}
 `;
 
 const Img = styled.img`
@@ -64,8 +75,8 @@ const BoxLink = ({ inverse = false, img, copy, buttonText }) => {
   return (
     <Wrapper center centerVert inverse={inverse} isMobile={isMobile}>
       <BorderedBox column isMobile={isMobile}>
-        <Text>{copy}</Text>
-        <StyledButton>{buttonText}</StyledButton>
+        <Text isMobile={isMobile}>{copy}</Text>
+        <StyledButton isMobile={isMobile}>{buttonText}</StyledButton>
       </BorderedBox>
 
       <Img src={img} isMobile={isMobile} />
