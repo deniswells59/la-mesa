@@ -3,9 +3,12 @@ import styled from 'styled-components';
 
 import Flex from 'components/Flex';
 
-import { COLORS } from 'theme';
-import widgetPrev from '../../../static/widget_preview.jpg';
 import { useMobileDetection } from 'providers/MobileDetectionProvider';
+
+import { COLORS } from 'theme';
+import CONFIG from 'config/Reservations';
+
+import widgetPrev from '../../../static/widget_preview.jpg';
 
 const Wrapper = styled(Flex)`
   margin: auto;
@@ -44,11 +47,8 @@ const Widget = () => {
   return (
     <Wrapper center centerVert column={isMobile}>
       <TextWrapper column isMobile={isMobile}>
-        <Title>Make A Reservation</Title>
-        <Text>
-          La Mesa, a neighborhood restaurant, provides a feeling of service and satisfaction.
-          Everyone is welcome to stop by any time and for any occasion.
-        </Text>
+        <Title>{CONFIG.title}</Title>
+        <Text>{CONFIG.text}</Text>
       </TextWrapper>
 
       <PreviewWidget src={widgetPrev} />

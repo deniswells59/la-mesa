@@ -5,7 +5,6 @@ import Flex from 'components/Flex';
 import ImgWithOverlay from 'components/Home/ImgWithOverlay';
 
 import { COLORS } from 'theme';
-import { useMobileDetection } from 'providers/MobileDetectionProvider';
 
 const ContentWrapper = styled.h1`
   position: absolute;
@@ -19,8 +18,6 @@ const ContentWrapper = styled.h1`
 `;
 
 const Banner = ({ children, img }) => {
-  const { isMobile } = useMobileDetection();
-
   return (
     <Flex column>
       <ImgWithOverlay source={img} height="400px" width="100%">

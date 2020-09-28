@@ -11,7 +11,7 @@ import Widget from 'components/Reservations/Widget';
 
 import { COLORS } from 'theme';
 
-import bannerImg from '../../static/reservations.jpg';
+import CONFIG from 'config/Reservations';
 
 const FullWidthContent = styled(Flex)`
   background: ${COLORS.PRIMARY};
@@ -34,7 +34,7 @@ const Title = styled.h2`
 export default function Reservations() {
   return (
     <Layout>
-      <Banner img={bannerImg}>Reservations</Banner>
+      <Banner img={CONFIG.bannerImg}>Reservations</Banner>
 
       <Widget />
 
