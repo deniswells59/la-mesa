@@ -5,6 +5,8 @@ import { BiMenu } from 'react-icons/bi';
 import NavItems from './NavItems';
 import MobileNav from './MobileNav';
 
+import logo from '../../../../../../static/logo.png';
+
 import { COLORS } from 'theme';
 
 const Container = styled.nav`
@@ -49,7 +51,7 @@ const NavBar = ({ isMobile }) => {
 
   return (
     <Container isMobile={isMobile}>
-      <Logo isMobile={isMobile} src="/logo.png" alt="Logo" />
+      <Logo isMobile={isMobile} src={logo} alt="Logo" />
 
       {isMobile && (
         <ContentWrapper>
