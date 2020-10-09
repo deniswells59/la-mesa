@@ -1,19 +1,23 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-const MobileDetectionCtx = createContext({ isMobile: true });
+const MobileDetectionCtx = createContext({ isMobile: false });
 
-const isMobile = (width) => console.log({ innerWidth: window.innerWidth, width }) || width <= 767;
+const isMobile = (width) => width <= 767;
 
 const MobileDetectionProvider = ({ children }) => {
-  const [mobileFlag, setMobileFlag] = useState({
-    isMobile: isMobile(window.innerWidth),
-  });
+  const [mobileFlag, setMobileFlag] = useState({ isMobile: false });
+
+  const resetMobileFlag = () => {
+    setMobileFlag({
+      isMobile: isMobile(window.innerWidth),
+    });
+  };
 
   useEffect(() => {
+    resetMobileFlag();
+
     const handleResize = () => {
-      setMobileFlag({
-        isMobile: isMobile(window.innerWidth),
-      });
+      resetMobileFlag();
     };
 
     window.addEventListener('resize', handleResize);
