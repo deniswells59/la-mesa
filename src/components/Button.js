@@ -19,6 +19,8 @@ const Button = styled.button`
   &:hover {
     background: ${(props) => (props.highlight ? COLORS.HIGHLIGHT_HOVER : COLORS.PRIMARY_HOVER)};
   }
+
+  ${(props) => props.disabled && `background: #5e8583c9;`};
 `;
 
 export default Button;

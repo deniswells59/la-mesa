@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import emailjs from 'emailjs-com';
 import styled from 'styled-components';
 
 import Flex from 'components/Flex';
@@ -36,15 +37,51 @@ const SubmitButton = styled(Button)`
 
 const Form = () => {
   const [formState, setFormState] = useState({});
+  const [disabledForm, setDisabledForm] = useState(false);
+
+  useEffect(() => {
+    emailjs.init('user_9J2pDLIAUHuE1fvmWUS99');
+  }, []);
+
+  const onInputChange = (event, name) => {
+    setFormState({ ...formState, [name]: event.target.value });
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    if (disabledForm) return;
+    setDisabledForm(true);
+
+    emailjs.send('postmark', 'template_qm1pq9d', formState);
+  };
 
   return (
     <Wrapper center centerVert>
-      <FormWrapper column center>
-        <Input placeholder="Name" type="text" max="80" required />
-        <Input placeholder="Email" type="email" max="180" required />
-        <Input placeholder="Phone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
-        <SubmitButton highlight type="submit">
-          Submit
+      <FormWrapper onSubmit={sendEmail}>
+        <Input
+          placeholder="Name"
+          type="text"
+          max="80"
+          required
+          onChange={(e) => onInputChange(e, 'name')}
+        />
+        <Input
+          placeholder="Email"
+          type="email"
+          max="180"
+          required
+          onChange={(e) => onInputChange(e, 'email')}
+        />
+        <Input
+          placeholder="Phone"
+          type="tel"
+          max="16"
+          required
+          onChange={(e) => onInputChange(e, 'phone')}
+        />
+
+        <SubmitButton disabled={disabledForm} highlight type="submit">
+          {disabledForm ? 'Sent!' : 'Submit'}
         </SubmitButton>
       </FormWrapper>
     </Wrapper>
