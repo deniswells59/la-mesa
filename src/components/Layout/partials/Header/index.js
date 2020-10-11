@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <Wrapper column>
-      <AddressBar>329 Lincoln Center, Stockton, CA</AddressBar>
+      <AddressBar />
 
       <NavBar isMobile={isMobile} />
     </Wrapper>

@@ -21,6 +21,20 @@ const Item = styled.li`
   }
 `;
 
+const ExternalLink = styled.a`
+  text-decoration: none;
+  color: inherit;
+`;
+
+const HighlightLink = styled.a`
+  text-decoration: none;
+
+  background: ${COLORS.HIGHLIGHT};
+  color: ${COLORS.WHITE};
+  padding: 12px;
+  font-weight: 100;
+`;
+
 const NavItems = () => (
   <Fragment>
     {['menu', 'reservations', 'careers', 'gallery'].map((text) => (
@@ -28,6 +42,20 @@ const NavItems = () => (
         <Link to={`/${text}`}>{text}</Link>
       </Item>
     ))}
+    <Item>
+      <ExternalLink
+        target="_blank"
+        href="https://www.toasttab.com/la-mesa-329-lincoln-center/giftcards"
+      >
+        Gift Cards
+      </ExternalLink>
+    </Item>
+
+    <Item>
+      <HighlightLink target="_blank" href="https://www.toasttab.com/la-mesa-329-lincoln-center/v3">
+        Order Online
+      </HighlightLink>
+    </Item>
   </Fragment>
 );
 
