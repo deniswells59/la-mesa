@@ -24,5 +24,6 @@ module.exports = {
         display: 'swap',
       },
     },
+    'gatsby-theme-gallery',
   ],
 };

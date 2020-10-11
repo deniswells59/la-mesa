@@ -6,7 +6,8 @@ const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
     background: ${COLORS.WHITE};
-    color: ${COLORS.BLACK};
+    background-color: ${COLORS.WHITE} !important;
+    color: ${COLORS.BLACK} !important;
     font-family: ${TEXT.SECONDARY};
   }
   ul {
