@@ -23,9 +23,9 @@ const Item = styled.li`
 
 const NavItems = () => (
   <Fragment>
-    {['home', 'menu', 'reservations', 'about', 'careers', 'gallery'].map((text) => (
+    {[, 'menu', 'reservations', 'careers', 'gallery'].map((text) => (
       <Item key={text}>
-        <Link to={text === 'home' ? '/' : `/${text}`}>{text}</Link>
+        <Link to={`/${text}`}>{text}</Link>
       </Item>
     ))}
   </Fragment>

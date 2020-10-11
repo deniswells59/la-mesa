@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 import { BiMenu } from 'react-icons/bi';
 import NavItems from './NavItems';
@@ -51,7 +52,9 @@ const NavBar = ({ isMobile }) => {
 
   return (
     <Container isMobile={isMobile}>
-      <Logo isMobile={isMobile} src={logo} alt="Logo" />
+      <Link to="/">
+        <Logo isMobile={isMobile} src={logo} alt="Logo" />
+      </Link>
 
       {isMobile && (
         <ContentWrapper>
