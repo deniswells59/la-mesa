@@ -8,7 +8,8 @@ import ImgWithOverlay from 'components/Home/ImgWithOverlay';
 
 import logo from '../../../static/logo.png';
 import imgLg from '../../../static/reservations.jpg';
-import imgSm from './images/banner-lg.png';
+import bannerLeft from '../../../static/banner-left.jpg';
+import bannerRight from '../../../static/banner-right.jpg';
 
 import { useMobileDetection } from 'providers/MobileDetectionProvider';
 
@@ -39,7 +40,7 @@ const Banner = () => {
 
       <Flex column={isMobile ? true : false}>
         <ImgWithOverlay
-          source={imgSm}
+          source={bannerLeft}
           height="240px"
           width={isMobile ? '100%' : '50%'}
           margin={isMobile ? '10px 0px 0px' : '10px 5px 0px 0px'}
@@ -50,7 +51,7 @@ const Banner = () => {
         </ImgWithOverlay>
 
         <ImgWithOverlay
-          source={imgSm}
+          source={bannerRight}
           height="240px"
           width={isMobile ? '100%' : '50%'}
           margin={isMobile ? '10px 0px 0px' : '10px 0px 0px 5px'}
