@@ -1,7 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { FaFacebookF, FaInstagram, FaYelp, FaMapMarkerAlt } from 'react-icons/fa';
+import {
+  FaFacebookF,
+  // FaInstagram,
+  FaYelp,
+  FaMapMarkerAlt,
+} from 'react-icons/fa';
 
 import Flex from 'components/Flex';
 
@@ -32,10 +37,23 @@ const Footer = () => {
   return (
     <Wrapper centerVert column={isMobile ? true : false} isMobile={isMobile}>
       <IconWrapper>
-        <FaFacebookF color={COLORS.SECONDARY} />
-        <FaInstagram color={COLORS.SECONDARY} />
-        <FaYelp color={COLORS.SECONDARY} />
-        <FaMapMarkerAlt color={COLORS.SECONDARY} />
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.facebook.com/La-Mesa-A-Mexican-Kitchen-100702048461188/"
+        >
+          <FaFacebookF color={COLORS.SECONDARY} />
+        </a>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.yelp.com/biz/la-mesa-a-mexican-kitchen-stockton"
+        >
+          <FaYelp color={COLORS.SECONDARY} />
+        </a>
+        <a target="_blank" rel="noreferrer" href="https://goo.gl/maps/Qgk19KGiySMuXfnu6">
+          <FaMapMarkerAlt color={COLORS.SECONDARY} />
+        </a>
       </IconWrapper>
 
       <Copyright>&copy; La Mesa. All rights reserved {new Date().getFullYear()}</Copyright>

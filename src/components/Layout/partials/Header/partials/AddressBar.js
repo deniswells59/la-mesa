@@ -33,7 +33,12 @@ const AddressBar = () => {
 
   return (
     <Wrapper isMobile={isMobile}>
-      <Link isMobile={isMobile} href="https://goo.gl/maps/Qgk19KGiySMuXfnu6" target="_blank">
+      <Link
+        isMobile={isMobile}
+        href="https://goo.gl/maps/Qgk19KGiySMuXfnu6"
+        target="_blank"
+        rel="noreferrer"
+      >
         <Flex centerVert>
           <FiMapPin color={COLORS.WHITE} size={isMobile ? '28' : '16'} style={iconStyles} />
           {!isMobile && '329 Lincoln Center, Stockton, CA'}

@@ -7,7 +7,7 @@ import Flex from 'components/Flex';
 import Button from 'components/Button';
 
 import { COLORS } from 'theme';
-import menu from '../../static/menus/Brunch.pdf';
+import menu from '../../static/menus/Menu.pdf';
 
 import CONFIG from 'config/Menu';
 
@@ -39,16 +39,8 @@ export default function Menu() {
       <Wrapper column center centerVert>
         <Text>{CONFIG.text}</Text>
 
-        <a href={menu}>
+        <a target="_blank" rel="noreferrer" href={menu}>
           <MenuButton highlight>Menu</MenuButton>
-        </a>
-
-        <a href={menu}>
-          <MenuButton highlight>Bar</MenuButton>
-        </a>
-
-        <a href={menu}>
-          <MenuButton highlight>Dessert</MenuButton>
         </a>
       </Wrapper>
     </Layout>

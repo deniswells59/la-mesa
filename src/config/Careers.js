@@ -1,4 +1,4 @@
-import bannerImg from '../../static/menu.jpg';
+import bannerImg from '../../static/reservations.jpg';
 
 const CONFIG = {
   bannerImg,

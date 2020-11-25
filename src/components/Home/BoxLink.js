@@ -46,12 +46,19 @@ const StyledButton = styled(Button)`
   `}
 `;
 
+const StyledHref = styled.a`
+  text-decoration: none;
+  color: ${COLORS.WHITE};
+  display: flex;
+  justify-content: center;
+`;
+
 const Text = styled.p`
   margin: 60px;
   ${({ isMobile }) =>
     isMobile &&
     `
-    margin-bottom: 20px;
+    margin: 40px 20px;
   `}
 `;
 
@@ -76,7 +83,17 @@ const BoxLink = ({ inverse = false, img, copy, buttonText }) => {
     <Wrapper center centerVert inverse={inverse} isMobile={isMobile}>
       <BorderedBox column isMobile={isMobile}>
         <Text isMobile={isMobile}>{copy}</Text>
-        <StyledButton isMobile={isMobile}>{buttonText}</StyledButton>
+        {buttonText && (
+          <StyledButton isMobile={isMobile}>
+            <StyledHref
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.toasttab.com/la-mesa-329-lincoln-center/v3"
+            >
+              {buttonText}
+            </StyledHref>
+          </StyledButton>
+        )}
       </BorderedBox>
 
       <Img src={img} isMobile={isMobile} />

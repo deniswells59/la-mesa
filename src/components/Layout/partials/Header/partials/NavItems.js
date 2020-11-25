@@ -37,7 +37,7 @@ const HighlightLink = styled.a`
 
 const NavItems = () => (
   <Fragment>
-    {['menu', 'reservations', 'careers', 'gallery'].map((text) => (
+    {['menu', 'careers', 'gallery'].map((text) => (
       <Item key={text}>
         <Link to={`/${text}`}>{text}</Link>
       </Item>
@@ -45,6 +45,7 @@ const NavItems = () => (
     <Item>
       <ExternalLink
         target="_blank"
+        rel="noreferrer"
         href="https://www.toasttab.com/la-mesa-329-lincoln-center/giftcards"
       >
         Gift Cards
@@ -52,7 +53,11 @@ const NavItems = () => (
     </Item>
 
     <Item>
-      <HighlightLink target="_blank" href="https://www.toasttab.com/la-mesa-329-lincoln-center/v3">
+      <HighlightLink
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.toasttab.com/la-mesa-329-lincoln-center/v3"
+      >
         Order Online
       </HighlightLink>
     </Item>

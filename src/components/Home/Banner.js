@@ -7,7 +7,7 @@ import Button from 'components/Button';
 import ImgWithOverlay from 'components/Home/ImgWithOverlay';
 
 import logo from '../../../static/logo.png';
-import imgLg from '../../../static/reservations.jpg';
+import imgLg from '../../../static/banner.jpg';
 import bannerLeft from '../../../static/banner-left.jpg';
 import bannerRight from '../../../static/banner-right.jpg';
 
@@ -21,6 +21,10 @@ const Logo = styled.img`
 `;
 
 const StyledLink = styled(Link)`
+  position: absolute;
+`;
+
+const StyledHref = styled.a`
   position: absolute;
 `;
 
@@ -45,9 +49,13 @@ const Banner = () => {
           width={isMobile ? '100%' : '50%'}
           margin={isMobile ? '10px 0px 0px' : '10px 5px 0px 0px'}
         >
-          <StyledLink to="/reservations">
-            <BannerButton highlight>Reservations</BannerButton>
-          </StyledLink>
+          <StyledHref
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.toasttab.com/la-mesa-329-lincoln-center/v3"
+          >
+            <BannerButton highlight>Order Online</BannerButton>
+          </StyledHref>
         </ImgWithOverlay>
 
         <ImgWithOverlay

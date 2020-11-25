@@ -22,7 +22,6 @@ export default function Home() {
         inverse
         img={CONFIG.SECTION_2.img}
         copy={CONFIG.SECTION_2.text}
-        buttonText={CONFIG.SECTION_2.button}
       />
     </Layout>
   );
