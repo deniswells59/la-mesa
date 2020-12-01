@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { IconContext } from 'react-icons';
 
 import MobileDetectionProvider from 'providers/MobileDetectionProvider';
@@ -12,6 +13,10 @@ const iconStyles = {
 
 export const wrapRootElement = ({ element }) => (
   <MobileDetectionProvider>
+    <Helmet>
+      <meta charSet="utf-8" />
+      <title>La Mesa Stockton Restaurant</title>
+    </Helmet>
     <IconContext.Provider value={iconStyles}>{element}</IconContext.Provider>
   </MobileDetectionProvider>
 );

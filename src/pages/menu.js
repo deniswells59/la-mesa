@@ -7,7 +7,7 @@ import Flex from 'components/Flex';
 import Button from 'components/Button';
 
 import { COLORS } from 'theme';
-import menu from '../../static/menus/Menu.pdf';
+import menu from 'file-loader?name=[name].[ext]!../../static/menus/Menu.pdf';
 
 import CONFIG from 'config/Menu';
 
